@@ -26,7 +26,7 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Build and Run Tests
+      - name: Build and Run JUnit Tests
         run: mvn clean test package
 
       - name: Set up Docker Buildx
@@ -45,4 +45,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_REPOSITORY }}:latest
+          tags: ma11i/demo:latest
